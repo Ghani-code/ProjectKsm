@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORJECT KSM</title>
+    <link rel="stylesheet" href ="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/css/all.css" />
+<link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Montserrat:wght@100&family=Shadows+Into+Light&family=Zen+Old+Mincho:wght@700&display=swap" rel="stylesheet">
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-user-astronaut"></i>&nbsp; KemasGhani.dev
+        </div>
+        <nav>
+            <div id="marker"></div>
+            <a href="index.html">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="skill.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+            <button onclick="typeWriter()">CLick me</button>
+    <p id="demo"></p>
+    <div class="prime">
+        <div class="introduction" >
+            <img src="img/profile.jpg" alt="">
+            <div class="container">
+                <p class="text">Hello everyone, i'm Kemas Ghani Sampurna but you can call me Ghani, I study at UPNVJ. I'm a college student who is passionate about programming especially web development, from learn on my own to join bootcamp for web development. i've grown my skills in front end, back end, and data science.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- javascript---------------------------------------------------------------------------------- -->
+    <script type="text/javascript">
+    var i = 0;
+    var txt = "Hi welcome to my web, have nice day :)";
+    var speed = 50;
+
+    function typeWriter() {
+
+    if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+}
+}
+    var marker = document.getElementById("marker");
+    var item = document.querySelectorAll("nav a");
+
+    function indicator(e){
+        marker.style.left = e.offsetLeft+"px";
+        marker.style.width = e.offsetWidth+"px";
+    }
+
+    item.forEach(link =>{
+        link.addEventListener("click", (e)=>{
+            indicator(e.target);
+        })
+    })
+
+    </script>
+</body>
+</html>
